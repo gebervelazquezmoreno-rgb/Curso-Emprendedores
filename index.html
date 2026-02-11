@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso de Emprendedores</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#f5f5f5;
+text-align:center;
+}
+
+header{
+background:linear-gradient(135deg,#111,#444);
+color:white;
+padding:100px 20px;
+animation:fadeIn 1.5s ease-in;
+}
+
+h1{
+font-size:3em;
+margin-bottom:10px;
+}
+
+p{
+font-size:1.2em;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:15px 30px;
+background:#25D366;
+color:white;
+text-decoration:none;
+border-radius:30px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#1ebe5d;
+transform:scale(1.1);
+}
+
+section{
+padding:60px 20px;
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+
+section.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Curso de Emprendedores</h1>
+<p>Aprende a crear, impulsar y hacer crecer tu negocio desde cero.</p>
+<a class="btn" href="https://wa.me/5283315044445">Inscribirme por WhatsApp</a>
+</header>
+
+<section>
+<h2>¿Qué aprenderás?</h2>
+<p>✔ Cómo iniciar tu negocio<br>
+✔ Estrategias de ventas<br>
+✔ Marketing digital básico<br>
+✔ Finanzas para emprendedores</p>
+</section>
+
+<section>
+<h2>Información del Curso</h2>
+<p>📅 Fecha: Próximamente<br>
+📍 Modalidad: Presencial / Online<br>
+🎓 Incluye constancia</p>
+</section>
+
+<script>
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", () => {
+sections.forEach(sec => {
+const top = sec.getBoundingClientRect().top;
+if(top < window.innerHeight - 100){
+sec.classList.add("visible");
+}
+});
+});
+</script>
+
+</body>
+</html>
