@@ -26,6 +26,7 @@ background:linear-gradient(135deg,#111,#444);
 color:white;
 padding:100px 20px;
 text-align:center;
+position:relative;
 }
 
 h1{
@@ -49,7 +50,30 @@ background:#1ebe5d;
 transform:scale(1.1);
 }
 
-/* 🔥 TARJETAS MODERNAS */
+/* 🔥 FLECHA ANIMADA */
+.flecha{
+position:absolute;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+font-size:40px;
+animation:mover 1.5s infinite;
+cursor:pointer;
+}
+
+@keyframes mover{
+0%{ transform:translate(-50%,0); }
+50%{ transform:translate(-50%,10px); }
+100%{ transform:translate(-50%,0); }
+}
+
+.ocultar{
+opacity:0;
+transition:0.5s;
+pointer-events:none;
+}
+
+/* TARJETAS */
 .card{
 background: rgba(255,255,255,0.9);
 backdrop-filter: blur(10px);
@@ -77,13 +101,6 @@ transition:1s;
 section.visible{
 opacity:1;
 transform:translateY(0);
-}
-
-.formulario{
-background-image:url("imagen3.jfif");
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
 }
 
 form{
@@ -116,12 +133,6 @@ background:#333;
 transform:scale(1.05);
 }
 
-@media(max-width:768px){
-.card{
-padding:25px;
-}
-}
-
 </style>
 </head>
 
@@ -130,7 +141,11 @@ padding:25px;
 <header>
 <h1>De empleado a emprendedor en 90 días</h1>
 <p>Convierte tu idea en un negocio real y comienza a generar ingresos propios.</p>
-<a class="btn" href="https://api.whatsapp.com/send?phone=5218331504445">Quiero emprender</a>
+<a class="btn" href="#">Quiero emprender</a>
+
+<!-- FLECHA -->
+<div class="flecha" id="flecha">⬇</div>
+
 </header>
 
 <section>
@@ -153,64 +168,39 @@ padding:25px;
 </div>
 </section>
 
-<section>
-<div class="card">
-<h2>¿Quién soy?</h2>
-<p>Soy emprendedor con experiencia en creación de negocios y estrategias de venta.
-He ayudado a personas a transformar sus ideas en proyectos reales y rentables.</p>
-</div>
-</section>
-
-<section>
-<div class="card">
-<h2>Lo que dicen nuestros alumnos</h2>
-<p>"Este curso cambió mi forma de vender y hoy tengo mi propio negocio." – Juan Pérez</p>
-<p>"Ahora sé cómo atraer clientes sin gastar en publicidad." – María López</p>
-</div>
-</section>
-
-<section class="formulario">
-<div class="card">
-<h2>Reserva tu lugar ahora</h2>
-
-<form action="https://formspree.io/f/mwvnvdgg" method="POST">
-
-<input type="hidden" name="_redirect" value="https://gebervelazquezmoreno.github.io/Curso-Emprendedores/gracias.html">
-
-<input type="text" name="nombre" placeholder="Nombre completo" required>
-<input type="number" name="edad" placeholder="Edad" required>
-<input type="tel" name="telefono" placeholder="Teléfono" required>
-<input type="text" name="ocupacion" placeholder="¿A qué te dedicas?" required>
-
-<button type="submit">Inscribirme hoy</button>
-
-</form>
-</div>
-</section>
-
-<section>
-<div class="card">
-<h2>Información del Curso</h2>
-<p>📅 Inicio próximamente<br>
-📍 Modalidad: Presencial / Online<br>
-🎓 Incluye constancia<br>
-⚠️ Cupos limitados</p>
-</div>
-</section>
-
 <script>
+
+/* Animación al hacer scroll */
 const sections = document.querySelectorAll("section");
+const flecha = document.getElementById("flecha");
+
 window.addEventListener("scroll", () => {
+
 sections.forEach(sec => {
 const top = sec.getBoundingClientRect().top;
 if(top < window.innerHeight - 100){
 sec.classList.add("visible");
 }
 });
+
+/* Ocultar flecha cuando baja */
+if(window.scrollY > 100){
+flecha.classList.add("ocultar");
+}else{
+flecha.classList.remove("ocultar");
+}
+
 });
+
+/* Click en flecha baja suavemente */
+flecha.addEventListener("click", ()=>{
+window.scrollTo({
+top: window.innerHeight,
+behavior: "smooth"
+});
+});
+
 </script>
 
-</body>
-</html>
 </body>
 </html>
