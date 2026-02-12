@@ -64,9 +64,16 @@ button:hover {
     opacity: 1.0;
 }
 body{
- margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #f1f3f5, #dee2e6);
+ background: linear-gradient(-45deg, #f1f3f5, #dee2e6, #e9ecef);
+    background-size: 400% 400%;
+    animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 }
 
 header{
