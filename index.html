@@ -6,6 +6,40 @@
 <title>Curso de Emprendedores</title>
 
 <style>
+ .formulario {
+    padding: 60px 20px;
+    text-align: center;
+    background: #f5f5f5;
+}
+
+form {
+ <input type="hidden" name="_redirect" value="https://TUUSUARIO.github.io/Curso-Emprendedores/gracias.html">
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: black;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #333;
+}
  .aprendizaje {
     display: flex;
     align-items: center;
@@ -25,7 +59,7 @@
     width: 100%;
     border-radius: 20px;
     filter: blur(3px);
-    opacity: 0.5;
+    opacity: 1.0;
 }
 body{
  margin: 0;
@@ -104,6 +138,23 @@ to{opacity:1;}
 
     <div class="imagen-lado">
         <img src="imagen2.jpeg" alt="Emprendedores">
+     <section class="formulario">
+    <h2>Agenda tu lugar</h2>
+
+    <form action="https://formspree.io/f/TUCODIGO" method="POST">
+        
+        <input type="text" name="nombre" placeholder="Nombre completo" required>
+
+        <input type="number" name="edad" placeholder="Edad" required>
+
+        <input type="tel" name="telefono" placeholder="Teléfono" required>
+
+        <input type="text" name="ocupacion" placeholder="¿A qué te dedicas?" required>
+
+        <button type="submit">Agendar Cita</button>
+
+    </form>
+</section>
     </div>
 </section>
 <section>
