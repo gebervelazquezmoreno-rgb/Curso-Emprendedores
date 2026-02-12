@@ -6,274 +6,253 @@
 <title>Curso de Emprendedores</title>
 
 <style>
+
 body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#f2f2f2;
-    color:#222;
-    scroll-behavior:smooth;
+margin:0;
+font-family:Arial, sans-serif;
+background:#f4f4f4;
 }
 
-/* Hero */
+/* HEADER */
 header{
-    background:linear-gradient(135deg,#111,#444);
-    color:white;
-    padding:100px 20px;
-    text-align:center;
+background:linear-gradient(135deg,#3a3a3a,#5a5a5a);
+color:white;
+padding:120px 20px;
+text-align:center;
+position:relative;
 }
 
-header h1{
-    font-size:3em;
-    margin-bottom:10px;
-}
-
-header p{
-    font-size:1.2em;
+h1{
+font-size:3em;
+margin-bottom:10px;
 }
 
 .btn{
-    display:inline-block;
-    margin-top:10px;
-    padding:15px 30px;
-    background:#25D366;
-    color:white;
-    text-decoration:none;
-    border-radius:30px;
-    transition:0.3s;
+display:inline-block;
+margin-top:20px;
+padding:15px 30px;
+background:#25D366;
+color:white;
+text-decoration:none;
+border-radius:30px;
+transition:0.3s;
 }
 
 .btn:hover{
-    background:#1ebe5d;
-    transform:scale(1.1);
+background:#1ebe5d;
+transform:scale(1.1);
 }
 
-/* Flecha animada */
+/* FLECHA */
 .flecha{
-    font-size:35px;
-    text-align:center;
-    animation:subirBajar 1.5s infinite;
+position:absolute;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+font-size:40px;
+animation:mover 1.5s infinite;
+cursor:pointer;
+color:white;
 }
 
-@keyframes subirBajar{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(12px);}
-    100%{transform:translateY(0);}
+@keyframes mover{
+0%{ transform:translate(-50%,0); }
+50%{ transform:translate(-50%,10px); }
+100%{ transform:translate(-50%,0); }
 }
 
-/* Secciones generales */
+.ocultar{
+opacity:0;
+transition:0.5s;
+pointer-events:none;
+}
+
+/* TARJETAS */
+.card, .card-formulario{
+background:#3f3f3f; /* gris elegante */
+color:white;
+padding:40px;
+border-radius:20px;
+max-width:1000px;
+margin:40px auto;
+box-shadow:0 20px 50px rgba(0,0,0,0.25);
+transition:0.3s ease;
+}
+
+.card:hover, .card-formulario:hover{
+transform:translateY(-5px);
+}
+
 section{
-    padding:60px 20px;
-    display:flex;
-    justify-content:center;
+padding:40px 20px;
+text-align:center;
+opacity:0;
+transform:translateY(50px);
+transition:1s;
 }
 
-.cuadro{
-    background:#555; /* gris elegante */
-    color:white;
-    max-width:900px;
-    width:100%;
-    padding:60px 30px;
-    border-radius:25px;
-    text-align:center;
-    box-shadow:0 20px 50px rgba(0,0,0,0.25);
-    margin-bottom:40px;
+section.visible{
+opacity:1;
+transform:translateY(0);
 }
 
-h2{
-    font-size:30px;
-    margin-bottom:25px;
+/* IMÁGENES GRANDES */
+.imagen-seccion{
+width:100%;
+max-width:850px;
+margin:30px auto 0 auto;
+display:block;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,0.4);
 }
 
-.linea{
-    width:100%;
-    height:3px;
-    background:white;
-    opacity:0.3;
-    margin:25px 0;
-}
-
-/* Aprendizaje */
-.aprendizaje{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
-
-.aprendizaje p{
-    text-align:left;
-    margin:5px 0;
-}
-
-/* Imagen lateral */
-.imagen-lado img{
-    width:100%;
-    max-width:400px;
-    border-radius:20px;
-    filter:blur(3px);
-    margin-top:20px;
-}
-
-/* Formulario */
+/* FORMULARIO */
 form{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-    margin-top:20px;
+max-width:400px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
 }
 
 input{
-    padding:12px;
-    border:none;
-    border-radius:10px;
-    font-size:16px;
+padding:12px;
+border-radius:10px;
+border:none;
+background:#f2f2f2;
+color:#000;
 }
 
 button{
-    padding:15px;
-    border:none;
-    border-radius:25px;
-    background:black;
-    color:white;
-    font-size:18px;
-    cursor:pointer;
-    transition:0.3s;
+padding:12px;
+border:none;
+border-radius:10px;
+background:white;
+color:black;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+font-weight:bold;
 }
 
 button:hover{
-    background:#333;
+background:#ddd;
+transform:scale(1.05);
 }
 
-/* Slider imágenes "Quién soy" */
-.slider{
-    position:relative;
-    width:100%;
-    max-width:500px;
-    aspect-ratio:3/4;
-    border-radius:20px;
-    overflow:hidden;
-    margin:20px auto;
-    background:#333;
-}
-
-.slide{
-    position:absolute;
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    opacity:0;
-    transition:opacity 1.5s ease-in-out;
-}
-
-.slide.active{
-    opacity:1;
-}
-
-@media(max-width:768px){
-    header h1{
-        font-size:28px;
-    }
-}
 </style>
 </head>
 
 <body>
 
-<!-- Hero -->
 <header>
-<h1>Curso de Emprendedores</h1>
-<p>Aprende a crear, impulsar y hacer crecer tu negocio desde cero.</p>
-<a class="btn" href="https://api.whatsapp.com/send?phone=5218331504445">Inscribirme por WhatsApp</a>
-<div class="flecha" id="flecha">↓</div>
+<h1>De empleado a emprendedor en 90 días</h1>
+<p>Convierte tu idea en un negocio real y comienza a generar ingresos propios.</p>
+<a class="btn" href="https://api.whatsapp.com/send?phone=5218331504445">Quiero emprender</a>
+<div class="flecha" id="flecha">⬇</div>
 </header>
 
-<!-- Qué aprenderás + Formulario -->
-<section class="aprendizaje">
-<div class="cuadro">
-<h2>¿Qué aprenderás?</h2>
-<div class="linea"></div>
-
-<p>✔ Cómo iniciar tu negocio</p>
-<p>✔ Estrategias de ventas</p>
-<p>✔ Marketing digital básico</p>
-<p>✔ Finanzas para emprendedores</p>
-
-<div class="imagen-lado">
-    <img src="imagen.jpeg" alt="Emprendedores">
-</div>
-
-<section class="formulario" id="formulario">
-<h2>Reserva tu lugar</h2>
-<div class="linea"></div>
-
-<form action="https://formspree.io/f/mwvnvdgg" method="POST">
-<input type="text" name="nombre" placeholder="Nombre completo" required>
-<input type="number" name="edad" placeholder="Edad" required>
-<input type="tel" name="telefono" placeholder="Teléfono" required>
-<input type="text" name="ocupacion" placeholder="¿A qué te dedicas?" required>
-<button type="submit">Agendar Cita</button>
-</form>
-</section>
-
+<section>
+<div class="card">
+<h2>¿Te identificas con esto?</h2>
+<p>❌ No sabes por dónde empezar tu negocio</p>
+<p>❌ Tienes miedo a fracasar</p>
+<p>❌ No sabes cómo conseguir clientes</p>
+<p>❌ Sientes que no tienes suficiente dinero</p>
 </div>
 </section>
 
-<!-- Quién soy -->
-<section class="seccion">
-<div class="cuadro">
+<section>
+<div class="card">
+<h2>Lo que lograrás en este curso</h2>
+<p>✔ Lanzar tu negocio desde cero</p>
+<p>✔ Conseguir tus primeros clientes</p>
+<p>✔ Aprender a vender sin miedo</p>
+<p>✔ Organizar tus finanzas inteligentemente</p>
+</div>
+</section>
+
+<section>
+<div class="card">
 <h2>¿Quién soy?</h2>
-<div class="linea"></div>
 <p>Soy emprendedor con experiencia en creación de negocios y estrategias de venta.
 He ayudado a personas a transformar sus ideas en proyectos reales y rentables.</p>
 
-<div class="slider">
-<img src="imagen2.jpeg" class="slide active">
-<img src="imagen6.jpeg" class="slide">
-</div>
+<img src="imagen6.jpeg" alt="Autor del curso" class="imagen-seccion">
 
 </div>
 </section>
 
-<!-- Información del curso -->
-<section class="seccion">
-<div class="cuadro">
-<h2>Información del Curso</h2>
-<div class="linea"></div>
-<p>📅 Fecha: Próximamente<br>
-📍 Modalidad: Presencial / Online<br>
-🎓 Incluye constancia</p>
-<img src="imagen1.jpeg" class="imagen-curso">
-</div>
-</section>
-
-<!-- Testimonios -->
-<section class="seccion">
-<div class="cuadro">
+<section>
+<div class="card">
 <h2>Testimonios</h2>
-<div class="linea"></div>
 <p>"Gracias a este curso lancé mi negocio en 2 meses." – Juan Pérez</p>
 <p>"Ahora sé cómo vender sin miedo." – María López</p>
 </div>
 </section>
 
-<script>
-// Slider automático
-let slides=document.querySelectorAll(".slide");
-let index=0;
-setInterval(()=>{
-slides[index].classList.remove("active");
-index=(index+1)%slides.length;
-slides[index].classList.add("active");
-},4000);
+<section>
+<div class="card-formulario">
+<h2>Reserva tu lugar</h2>
 
-// Ocultar flecha al hacer scroll
-window.addEventListener("scroll",()=>{
-let flecha=document.getElementById("flecha");
-if(window.scrollY>200){
-flecha.style.display="none";
-}else{
-flecha.style.display="block";
+<form action="https://formspree.io/f/mwvnvdgg" method="POST">
+
+<input type="hidden" name="_redirect" value="https://gebervelazquezmoreno.github.io/Curso-Emprendedores/gracias.html">
+
+<input type="text" name="nombre" placeholder="Nombre completo" required>
+<input type="number" name="edad" placeholder="Edad" required>
+<input type="tel" name="telefono" placeholder="Teléfono" required>
+<input type="text" name="ocupacion" placeholder="¿A qué te dedicas?" required>
+
+<button type="submit">Inscribirme hoy</button>
+
+</form>
+</div>
+</section>
+
+<section>
+<div class="card">
+<h2>Información del Curso</h2>
+<p>📅 Inicio próximamente</p>
+<p>📍 Modalidad presencial / online</p>
+<p>🎓 Incluye constancia</p>
+<p>⚠️ Cupos limitados</p>
+
+<!-- NUEVA IMAGEN -->
+<img src="imagen1.jpeg" alt="Información del curso" class="imagen-seccion">
+
+</div>
+</section>
+
+<script>
+
+const sections = document.querySelectorAll("section");
+const flecha = document.getElementById("flecha");
+
+window.addEventListener("scroll", () => {
+
+sections.forEach(sec => {
+const top = sec.getBoundingClientRect().top;
+if(top < window.innerHeight - 100){
+sec.classList.add("visible");
 }
 });
+
+if(window.scrollY > 100){
+flecha.classList.add("ocultar");
+}else{
+flecha.classList.remove("ocultar");
+}
+
+});
+
+flecha.addEventListener("click", ()=>{
+window.scrollTo({
+top: window.innerHeight,
+behavior: "smooth"
+});
+});
+
 </script>
 
 </body>
