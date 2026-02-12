@@ -77,6 +77,7 @@ max-width:1000px;
 margin:40px auto;
 box-shadow:0 20px 50px rgba(0,0,0,0.25);
 transition:0.3s ease;
+text-align:center;
 }
 
 .card:hover, .card-formulario:hover{
@@ -85,7 +86,6 @@ transform:translateY(-5px);
 
 section{
 padding:40px 20px;
-text-align:center;
 opacity:0;
 transform:translateY(50px);
 transition:1s;
@@ -176,12 +176,12 @@ transform:scale(1.05);
 <div class="flecha" id="flecha">⬇</div>
 </header>
 
-<!-- NUEVO APARTADO: Foto + texto antes de "Te identificas con esto" -->
+<!-- Introducción -->
 <section>
 <div class="card">
 <h2>Aquí va tu texto introductorio</h2>
 <p>Agrega aquí la descripción o mensaje que quieras antes de mostrar la foto.</p>
-<img src="imagen7.jpeg" alt="Foto introductoria" class="imagen-seccion">
+<img src="introduccion.jpg" alt="Foto introductoria" class="imagen-seccion">
 </div>
 </section>
 
@@ -204,11 +204,10 @@ transform:scale(1.05);
 </div>
 </section>
 
-<!-- NUEVO CUADRO: Nuestro sistema -->
 <section>
 <div class="card">
 <h2>Nuestro sistema</h2>
-<p>Creea-conecta-Enrola y venderás 
+<p>Creea-  conecta - Enrola  y venderás 
 Tus productos  y Servicios</p>
 </div>
 </section>
@@ -220,15 +219,13 @@ Tus productos  y Servicios</p>
 He ayudado a personas a transformar sus ideas en proyectos reales y rentables.</p>
 
 <img src="imagen6.jpeg" alt="Autor del curso" class="imagen-seccion">
-
 </div>
 </section>
 
-<!-- TESTIMONIOS COMO SLIDER DE IMÁGENES -->
+<!-- Testimonios como slider de imágenes -->
 <section>
 <div class="card">
 <h2>Testimonios</h2>
-<div class="linea"></div>
 
 <div class="slider-testimonios">
   <img src="imagen10.jpeg" class="slide-testimonio active" alt="Testimonio 1">
@@ -271,7 +268,6 @@ He ayudado a personas a transformar sus ideas en proyectos reales y rentables.</
 <p>🎓 Incluye constancia</p>
 <p>⚠️ Cupos limitados</p>
 
-<!-- IMAGEN CURSO -->
 <img src="imagen1.jpeg" alt="Información del curso" class="imagen-seccion">
 
 </div>
@@ -279,11 +275,11 @@ He ayudado a personas a transformar sus ideas en proyectos reales y rentables.</
 
 <script>
 
+// Scroll y flecha
 const sections = document.querySelectorAll("section");
 const flecha = document.getElementById("flecha");
 
 window.addEventListener("scroll", () => {
-
 sections.forEach(sec => {
 const top = sec.getBoundingClientRect().top;
 if(top < window.innerHeight - 100){
@@ -296,7 +292,6 @@ flecha.classList.add("ocultar");
 }else{
 flecha.classList.remove("ocultar");
 }
-
 });
 
 flecha.addEventListener("click", ()=>{
