@@ -73,7 +73,7 @@ transition:0.5s;
 pointer-events:none;
 }
 
-/* TARJETAS */
+/* TARJETAS GENERALES */
 .card{
 background: rgba(255,255,255,0.95);
 padding:40px;
@@ -89,6 +89,17 @@ transform:translateY(-5px);
 box-shadow:0 20px 50px rgba(0,0,0,0.15);
 }
 
+/* TARJETA ESPECIAL FORMULARIO */
+.card-formulario{
+background:white;
+padding:50px;
+border-radius:20px;
+max-width:1000px;
+margin:40px auto;
+border:3px solid #111; /* 🔥 ESTA ES LA LINEA */
+box-shadow:0 20px 60px rgba(0,0,0,0.15);
+}
+
 section{
 padding:40px 20px;
 text-align:center;
@@ -100,19 +111,6 @@ transition:1s;
 section.visible{
 opacity:1;
 transform:translateY(0);
-}
-
-/* LINEA DECORATIVA */
-.titulo-linea{
-margin-bottom:10px;
-}
-
-.linea-decorativa{
-width:80px;
-height:4px;
-background:linear-gradient(90deg,#000,#555);
-margin:10px auto 30px auto;
-border-radius:10px;
 }
 
 form{
@@ -194,9 +192,8 @@ He ayudado a personas a transformar sus ideas en proyectos reales y rentables.</
 </section>
 
 <section>
-<div class="card">
-<h2 class="titulo-linea">Reserva tu lugar</h2>
-<div class="linea-decorativa"></div>
+<div class="card-formulario">
+<h2>Reserva tu lugar</h2>
 
 <form action="https://formspree.io/f/mwvnvdgg" method="POST">
 
