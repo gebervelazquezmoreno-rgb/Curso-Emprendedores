@@ -6,7 +6,6 @@
 <title>Curso de Emprendedores</title>
 
 <style>
-
 body{
 margin:0;
 font-family:Arial, sans-serif;
@@ -69,7 +68,7 @@ pointer-events:none;
 
 /* TARJETAS */
 .card, .card-formulario{
-background:#3f3f3f; /* gris elegante */
+background:#3f3f3f;
 color:white;
 padding:40px;
 border-radius:20px;
@@ -78,6 +77,7 @@ margin:40px auto;
 box-shadow:0 20px 50px rgba(0,0,0,0.25);
 transition:0.3s ease;
 text-align:center;
+position:relative;
 }
 
 .card:hover, .card-formulario:hover{
@@ -144,8 +144,8 @@ transform:scale(1.05);
 .slider-testimonios{
   position:relative;
   width:100%;
-  max-width:600px;
-  height:350px;
+  max-width:800px;
+  height:400px; /* altura fija para que la tarjeta no se corte */
   margin:20px auto 0 auto;
   overflow:hidden;
   border-radius:20px;
@@ -163,7 +163,6 @@ transform:scale(1.05);
 .slide-testimonio.active{
   opacity:1;
 }
-
 </style>
 </head>
 
@@ -181,7 +180,7 @@ transform:scale(1.05);
 <div class="card">
 <h2>Aquí va tu texto introductorio</h2>
 <p>Agrega aquí la descripción o mensaje que quieras antes de mostrar la foto.</p>
-<img src="introduccion.jpg" alt="Foto introductoria" class="imagen-seccion">
+<img src="imagen7.jpeg" alt="Foto introductoria" class="imagen-seccion">
 </div>
 </section>
 
@@ -207,8 +206,7 @@ transform:scale(1.05);
 <section>
 <div class="card">
 <h2>Nuestro sistema</h2>
-<p>Creea-  conecta - Enrola  y venderás 
-Tus productos  y Servicios</p>
+<p>Aquí podrás agregar toda la información sobre tu sistema.</p>
 </div>
 </section>
 
@@ -228,14 +226,14 @@ He ayudado a personas a transformar sus ideas en proyectos reales y rentables.</
 <h2>Testimonios</h2>
 
 <div class="slider-testimonios">
-  <img src="imagen10.jpeg" class="slide-testimonio active" alt="Testimonio 1">
-  <img src="imagen11.jpeg" class="slide-testimonio" alt="Testimonio 2">
-  <img src="imagen12.jpeg" class="slide-testimonio" alt="Testimonio 3">
-  <img src="imagen13.jpeg" class="slide-testimonio" alt="Testimonio 4">
-  <img src="imagen14.jpeg" class="slide-testimonio" alt="Testimonio 5">
-  <img src="imagen15.jpeg" class="slide-testimonio" alt="Testimonio 6">
-  <img src="imagen16.jpeg" class="slide-testimonio" alt="Testimonio 7">
-  <img src="imagen17.jpeg" class="slide-testimonio" alt="Testimonio 8">
+  <img src="imagen10.jpg" class="slide-testimonio active" alt="Testimonio 1">
+  <img src="imagen11.jpg" class="slide-testimonio" alt="Testimonio 2">
+  <img src="imagen12.jpg" class="slide-testimonio" alt="Testimonio 3">
+  <img src="imagen13.jpg" class="slide-testimonio" alt="Testimonio 4">
+  <img src="imagen14.jpg" class="slide-testimonio" alt="Testimonio 5">
+  <img src="imagen15.jpg" class="slide-testimonio" alt="Testimonio 6">
+  <img src="imagen16.jpg" class="slide-testimonio" alt="Testimonio 7">
+  <img src="imagen17.jpg" class="slide-testimonio" alt="Testimonio 8">
 </div>
 
 </div>
@@ -246,16 +244,12 @@ He ayudado a personas a transformar sus ideas en proyectos reales y rentables.</
 <h2>Reserva tu lugar</h2>
 
 <form action="https://formspree.io/f/mwvnvdgg" method="POST">
-
 <input type="hidden" name="_redirect" value="https://gebervelazquezmoreno.github.io/Curso-Emprendedores/gracias.html">
-
 <input type="text" name="nombre" placeholder="Nombre completo" required>
 <input type="number" name="edad" placeholder="Edad" required>
 <input type="tel" name="telefono" placeholder="Teléfono" required>
 <input type="text" name="ocupacion" placeholder="¿A qué te dedicas?" required>
-
 <button type="submit">Inscribirme hoy</button>
-
 </form>
 </div>
 </section>
@@ -269,13 +263,10 @@ He ayudado a personas a transformar sus ideas en proyectos reales y rentables.</
 <p>⚠️ Cupos limitados</p>
 
 <img src="imagen1.jpeg" alt="Información del curso" class="imagen-seccion">
-
 </div>
 </section>
 
 <script>
-
-// Scroll y flecha
 const sections = document.querySelectorAll("section");
 const flecha = document.getElementById("flecha");
 
@@ -309,7 +300,6 @@ setInterval(()=>{
   indexTest = (indexTest + 1) % slidesTest.length;
   slidesTest[indexTest].classList.add("active");
 },4000);
-
 </script>
 
 </body>
