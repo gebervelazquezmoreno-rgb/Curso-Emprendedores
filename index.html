@@ -24,7 +24,7 @@ animation: gradient 8s ease infinite;
 header{
 background:linear-gradient(135deg,#111,#444);
 color:white;
-padding:100px 20px;
+padding:120px 20px;
 text-align:center;
 position:relative;
 }
@@ -50,7 +50,7 @@ background:#1ebe5d;
 transform:scale(1.1);
 }
 
-/* 🔥 FLECHA ANIMADA */
+/* FLECHA */
 .flecha{
 position:absolute;
 bottom:20px;
@@ -75,8 +75,7 @@ pointer-events:none;
 
 /* TARJETAS */
 .card{
-background: rgba(255,255,255,0.9);
-backdrop-filter: blur(10px);
+background: rgba(255,255,255,0.95);
 padding:40px;
 border-radius:20px;
 box-shadow:0 15px 40px rgba(0,0,0,0.1);
@@ -141,11 +140,9 @@ transform:scale(1.05);
 <header>
 <h1>De empleado a emprendedor en 90 días</h1>
 <p>Convierte tu idea en un negocio real y comienza a generar ingresos propios.</p>
-<a class="btn" href="#">Quiero emprender</a>
+<a class="btn" href="https://api.whatsapp.com/send?phone=5218331504445">Quiero emprender</a>
 
-<!-- FLECHA -->
 <div class="flecha" id="flecha">⬇</div>
-
 </header>
 
 <section>
@@ -168,9 +165,53 @@ transform:scale(1.05);
 </div>
 </section>
 
+<section>
+<div class="card">
+<h2>¿Quién soy?</h2>
+<p>Soy emprendedor con experiencia en creación de negocios y estrategias de venta.
+He ayudado a personas a transformar sus ideas en proyectos reales y rentables.</p>
+</div>
+</section>
+
+<section>
+<div class="card">
+<h2>Testimonios</h2>
+<p>"Gracias a este curso lancé mi negocio en 2 meses." – Juan Pérez</p>
+<p>"Ahora sé cómo vender sin miedo." – María López</p>
+</div>
+</section>
+
+<section>
+<div class="card">
+<h2>Reserva tu lugar</h2>
+
+<form action="https://formspree.io/f/mwvnvdgg" method="POST">
+
+<input type="hidden" name="_redirect" value="https://gebervelazquezmoreno.github.io/Curso-Emprendedores/gracias.html">
+
+<input type="text" name="nombre" placeholder="Nombre completo" required>
+<input type="number" name="edad" placeholder="Edad" required>
+<input type="tel" name="telefono" placeholder="Teléfono" required>
+<input type="text" name="ocupacion" placeholder="¿A qué te dedicas?" required>
+
+<button type="submit">Inscribirme hoy</button>
+
+</form>
+</div>
+</section>
+
+<section>
+<div class="card">
+<h2>Información del Curso</h2>
+<p>📅 Inicio próximamente</p>
+<p>📍 Modalidad presencial / online</p>
+<p>🎓 Incluye constancia</p>
+<p>⚠️ Cupos limitados</p>
+</div>
+</section>
+
 <script>
 
-/* Animación al hacer scroll */
 const sections = document.querySelectorAll("section");
 const flecha = document.getElementById("flecha");
 
@@ -183,7 +224,6 @@ sec.classList.add("visible");
 }
 });
 
-/* Ocultar flecha cuando baja */
 if(window.scrollY > 100){
 flecha.classList.add("ocultar");
 }else{
@@ -192,7 +232,6 @@ flecha.classList.remove("ocultar");
 
 });
 
-/* Click en flecha baja suavemente */
 flecha.addEventListener("click", ()=>{
 window.scrollTo({
 top: window.innerHeight,
