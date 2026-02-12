@@ -6,80 +6,26 @@
 <title>Curso de Emprendedores</title>
 
 <style>
- .formulario {
-     padding: 60px 20px;
-    background-image: url("imagen4.jfif");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
-form {
- <input type="hidden" name="_redirect" value="https://gebervelazquezmoreno.github.io/Curso-Emprendedores/gracias.html">
-    max-width: 400px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-input {
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-}
-
-button {
-    padding: 12px;
-    border: none;
-    border-radius: 10px;
-    background: black;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #333;
-}
- .aprendizaje {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 20px;
-}
-
-.texto {
-    width: 50%;
-}
-
-.imagen-lado {
-    width: 45%;
-}
-
-.imagen-lado img {
-    width: 100%;
-    border-radius: 20px;
-    filter: blur(3px);
-    opacity: 1.0;
-}
 body{
- background: linear-gradient(-45deg, #f1f3f5, #dee2e6, #e9ecef);
-    background-size: 400% 400%;
-    animation: gradient 8s ease infinite;
+margin:0;
+font-family:Arial, sans-serif;
+background: linear-gradient(-45deg, #f1f3f5, #dee2e6, #e9ecef);
+background-size: 400% 400%;
+animation: gradient 8s ease infinite;
 }
 
 @keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
 }
 
 header{
 background:linear-gradient(135deg,#111,#444);
 color:white;
 padding:100px 20px;
-animation:fadeIn 1.5s ease-in;
+text-align:center;
 }
 
 h1{
@@ -87,13 +33,9 @@ font-size:3em;
 margin-bottom:10px;
 }
 
-p{
-font-size:1.2em;
-}
-
 .btn{
 display:inline-block;
-margin-top:10px;
+margin-top:20px;
 padding:15px 30px;
 background:#25D366;
 color:white;
@@ -109,6 +51,7 @@ transform:scale(1.1);
 
 section{
 padding:60px 20px;
+text-align:center;
 opacity:0;
 transform:translateY(50px);
 transition:1s;
@@ -119,60 +62,141 @@ opacity:1;
 transform:translateY(0);
 }
 
-@keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
+.aprendizaje{
+display:flex;
+align-items:center;
+justify-content:space-between;
+text-align:left;
 }
+
+.texto{
+width:50%;
+}
+
+.imagen-lado{
+width:45%;
+}
+
+.imagen-lado img{
+width:100%;
+border-radius:20px;
+filter:blur(2px);
+}
+
+.formulario{
+background-image:url("imagen3.jfif");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+form{
+max-width:400px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input{
+padding:12px;
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+button{
+padding:12px;
+border:none;
+border-radius:10px;
+background:black;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#333;
+transform:scale(1.05);
+}
+
+@media(max-width:768px){
+.aprendizaje{
+flex-direction:column;
+}
+.texto,.imagen-lado{
+width:100%;
+}
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>Curso de Emprendedores</h1>
-<p>Aprende a crear, impulsar y hacer crecer tu negocio desde cero.</p>
-<a class="btn" href="https://api.whatsapp.com/send?phone=5218331504445">Inscribirme por WhatsApp</a>
+<h1>De empleado a emprendedor en 90 días</h1>
+<p>Convierte tu idea en un negocio real y comienza a generar ingresos propios.</p>
+<a class="btn" href="https://api.whatsapp.com/send?phone=5218331504445">Quiero emprender</a>
 </header>
 
+<section>
+<h2>¿Te identificas con esto?</h2>
+<p>❌ No sabes por dónde empezar tu negocio</p>
+<p>❌ Tienes miedo a fracasar</p>
+<p>❌ No sabes cómo conseguir clientes</p>
+<p>❌ Sientes que no tienes suficiente dinero</p>
+</section>
+
 <section class="aprendizaje">
-    <div class="texto">
-        <h2>¿Qué aprenderás?</h2>
-        <p>✔ Cómo iniciar tu negocio</p>
-        <p>✔ Estrategias de ventas</p>
-        <p>✔ Marketing digital básico</p>
-        <p>✔ Finanzas para emprendedores</p>
-    </div>
+<div class="texto">
+<h2>Lo que lograrás en este curso</h2>
+<p>✔ Lanzar tu negocio desde cero</p>
+<p>✔ Conseguir tus primeros clientes</p>
+<p>✔ Aprender a vender sin miedo</p>
+<p>✔ Organizar tus finanzas inteligentemente</p>
+</div>
 
-    <div class="imagen-lado">
-        <img src="imagen.jpeg" alt="Emprendedores">
-     <section class="formulario">
-    <h2>Agenda tu lugar</h2>
-
-    <form action="https://formspree.io/f/mwvnvdgg" method="POST">
-        
-        <input type="text" name="nombre" placeholder="Nombre completo" required>
-
-        <input type="number" name="edad" placeholder="Edad" required>
-
-        <input type="tel" name="telefono" placeholder="Teléfono" required>
-
-        <input type="text" name="ocupacion" placeholder="¿A qué te dedicas?" required>
-
-        <button type="submit">Agendar Cita</button>
-
-    </form>
+<div class="imagen-lado">
+<img src="imagen.jpeg" alt="Emprendedores">
+</div>
 </section>
-    </div>
+
+<section>
+<h2>¿Quién soy?</h2>
+<p>Soy emprendedor con experiencia en creación de negocios y estrategias de venta. 
+He ayudado a personas a transformar sus ideas en proyectos reales y rentables.</p>
 </section>
+
+<section class="testimonios">
+<h2>Lo que dicen nuestros alumnos</h2>
+<p>"Este curso cambió mi forma de vender y hoy tengo mi propio negocio." – Juan Pérez</p>
+<p>"Ahora sé cómo atraer clientes sin gastar en publicidad." – María López</p>
+</section>
+
+<section class="formulario">
+<h2>Reserva tu lugar ahora</h2>
+
+<form action="https://formspree.io/f/mwvnvdgg" method="POST">
+
+<input type="hidden" name="_redirect" value="https://gebervelazquezmoreno.github.io/Curso-Emprendedores/gracias.html">
+
+<input type="text" name="nombre" placeholder="Nombre completo" required>
+<input type="number" name="edad" placeholder="Edad" required>
+<input type="tel" name="telefono" placeholder="Teléfono" required>
+<input type="text" name="ocupacion" placeholder="¿A qué te dedicas?" required>
+
+<button type="submit">Inscribirme hoy</button>
+
+</form>
+</section>
+
 <section>
 <h2>Información del Curso</h2>
-<p>📅 Fecha: Próximamente<br>
+<p>📅 Inicio próximamente<br>
 📍 Modalidad: Presencial / Online<br>
-🎓 Incluye constancia</p>
-</section>
- <section class="testimonios">
-  <h2>Lo que dicen nuestros alumnos</h2>
-  <p>"Este curso cambió mi forma de vender" – Juan Pérez</p>
+🎓 Incluye constancia<br>
+⚠️ Cupos limitados</p>
 </section>
 
 <script>
