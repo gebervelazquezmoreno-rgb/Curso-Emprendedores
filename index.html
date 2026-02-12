@@ -69,7 +69,7 @@ pointer-events:none;
 
 /* TARJETAS */
 .card, .card-formulario{
-background:#3a3a3a;
+background:#3f3f3f;
 color:white;
 padding:40px;
 border-radius:20px;
@@ -96,10 +96,34 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* IMAGEN QUIEN SOY */
-.imagen-autor{
+/* SLIDER QUIEN SOY */
+.slider{
+position:relative;
+max-width:850px;
+margin:30px auto 0 auto;
+height:400px;
+overflow:hidden;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+.slide{
+position:absolute;
 width:100%;
-max-width:800px;
+height:100%;
+object-fit:cover;
+opacity:0;
+transition:opacity 1.5s ease-in-out;
+}
+
+.slide.active{
+opacity:1;
+}
+
+/* IMAGEN CURSO */
+.imagen-seccion{
+width:100%;
+max-width:850px;
 margin:30px auto 0 auto;
 display:block;
 border-radius:20px;
@@ -178,8 +202,10 @@ transform:scale(1.05);
 <p>Soy emprendedor con experiencia en creación de negocios y estrategias de venta.
 He ayudado a personas a transformar sus ideas en proyectos reales y rentables.</p>
 
-<!-- IMAGEN GRANDE -->
-<img src="imagen2.jpeg" alt="Autor del curso" class="imagen-autor">
+<div class="slider">
+    <img src="imagen1.jpeg" class="slide active">
+    <img src="imagen6.jpeg" class="slide">
+</div>
 
 </div>
 </section>
@@ -218,11 +244,15 @@ He ayudado a personas a transformar sus ideas en proyectos reales y rentables.</
 <p>📍 Modalidad presencial / online</p>
 <p>🎓 Incluye constancia</p>
 <p>⚠️ Cupos limitados</p>
+
+<img src="imagen2.jpeg" alt="Información del curso" class="imagen-seccion">
+
 </div>
 </section>
 
 <script>
 
+/* Animación scroll */
 const sections = document.querySelectorAll("section");
 const flecha = document.getElementById("flecha");
 
@@ -243,12 +273,23 @@ flecha.classList.remove("ocultar");
 
 });
 
+/* Flecha click */
 flecha.addEventListener("click", ()=>{
 window.scrollTo({
 top: window.innerHeight,
 behavior: "smooth"
 });
 });
+
+/* Slider automático */
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+setInterval(() => {
+slides[index].classList.remove("active");
+index = (index + 1) % slides.length;
+slides[index].classList.add("active");
+}, 4000);
 
 </script>
 
